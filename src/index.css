@@ -1,0 +1,167 @@
+@import "@fontsource/sarabun/400.css";
+@import "@fontsource/sarabun/500.css";
+@import "@fontsource/sarabun/700.css";
+@import "tailwindcss";
+
+:root {
+  font-family: "Sarabun", system-ui, sans-serif;
+  color-scheme: dark;
+  --space-bg: #050816;
+  --space-panel: rgba(10, 16, 36, 0.7);
+  --text-main: #ecf7ff;
+  --text-soft: rgba(222, 241, 255, 0.78);
+  --text-dim: rgba(179, 207, 223, 0.58);
+  --accent-cyan: #67e8f9;
+  --accent-gold: #f7c948;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at top, rgba(24, 54, 118, 0.32), transparent 30%),
+    radial-gradient(circle at 85% 18%, rgba(129, 61, 156, 0.2), transparent 22%),
+    radial-gradient(circle at 18% 80%, rgba(9, 103, 120, 0.18), transparent 24%),
+    var(--space-bg);
+  color: var(--text-main);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.space-panel {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03)),
+    var(--space-panel);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 28px 90px rgba(2, 6, 23, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(24px);
+}
+
+.space-grid {
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(circle at center, black 55%, transparent 100%);
+}
+
+.nebula {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(70px);
+}
+
+.nebula-a {
+  left: -8%;
+  top: 8%;
+  height: 18rem;
+  width: 18rem;
+  background: rgba(34, 211, 238, 0.14);
+}
+
+.nebula-b {
+  right: 4%;
+  top: 12%;
+  height: 22rem;
+  width: 22rem;
+  background: rgba(232, 121, 249, 0.12);
+}
+
+.nebula-c {
+  bottom: 8%;
+  left: 28%;
+  height: 20rem;
+  width: 20rem;
+  background: rgba(250, 204, 21, 0.08);
+}
+
+.star-particle {
+  animation-name: starFloat;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.orbital-ring {
+  animation: orbitSpin 12s linear infinite;
+}
+
+@keyframes starFloat {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    opacity: 0.95;
+    transform: translateY(-10px) scale(1.35);
+  }
+}
+
+@keyframes orbitSpin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media print {
+  body {
+    background: #ffffff;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .classic-resume-shell {
+    padding: 0 !important;
+  }
+
+  .classic-resume-sheet {
+    max-width: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+
+  .resume-image-shell {
+    padding: 0 !important;
+  }
+
+  .resume-image-frame {
+    max-width: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+
+  .resume-image-file {
+    border-radius: 0 !important;
+    max-height: 100vh;
+    object-fit: contain;
+  }
+}

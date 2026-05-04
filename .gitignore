@@ -1,0 +1,21 @@
+# ไม่เอาโฟลเดอร์ node_modules
+node_modules/
+
+
+# ไม่เอาไฟล์ log
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ไม่เอาไฟล์ .env
+.env
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# VSCode
+.vscode/
